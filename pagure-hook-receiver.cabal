@@ -1,0 +1,22 @@
+name:                pagure-hook-receiver
+version:             0.1.0.0
+synopsis:            Receive hooks from pagure and do things with them
+-- description:         
+homepage:            https://pagure.io/pagure-hook-receiver
+license:             BSD2
+license-file:        LICENSE
+author:              Ricky Elrod
+maintainer:          relrod@redhat.com
+-- copyright:           
+category:            Web
+build-type:          Simple
+-- extra-source-files:  
+cabal-version:       >=1.10
+
+executable pagure-hook-receiver
+  main-is:             Main.hs
+  -- other-modules:       
+  -- other-extensions:    
+  build-depends:       base >= 4 && < 5
+  -- hs-source-dirs:      
+  default-language:    Haskell2010
