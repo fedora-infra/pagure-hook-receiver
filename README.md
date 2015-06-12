@@ -60,10 +60,13 @@ listener to handle the deployment of project documentation.
 
 The `StandardHooks` module contains hooks and utility functions that are useful
 in the general case. For example `githubMirror :: String -> IO ()` is a hook
-that takes a GitHub repo (`username/reponame`) and mirrors the code (and
-branches and tags) from the Pagure repo to it. `cloneRepo :: String -> IO ()` is
-a utility function that will clone the repo to the if necessary. Internally,
-after all hooks are called, if there is a clone of the repository, we delete it
+that takes a GitHub repo (`username/reponame`) and a private (deployment) key
+and mirrors the code (and branches and tags) from the Pagure repo to it.
+
+`cloneRepo :: String -> IO ()` is a utility function that will clone the repo if
+necessary. Many hooks will likely call this, especially if they wish to make use
+of files within the git repo, or the git repo itself. Internally, after all
+hooks are called, if there is a clone of the repository, we delete it
 automatically.
 
 ## License
