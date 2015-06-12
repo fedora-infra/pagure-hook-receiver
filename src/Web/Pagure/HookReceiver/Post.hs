@@ -20,7 +20,7 @@ import Web.Scotty
 
 runPagureListener :: Int -> M.Map String [String -> IO ()] -> IO ()
 runPagureListener port projectMapping =
-  scotty port $ do
+  scotty port $
     post "/:projectname" $ do
       name <- param "projectname"
       case M.lookup name projectMapping of
