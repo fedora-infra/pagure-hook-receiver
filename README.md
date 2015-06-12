@@ -30,12 +30,13 @@ import Web.Pagure.HookReceiver.StandardHooks (githubMirror, cloneRepo)
 -- However, this is how you can define deploy keys. Of course, each project
 -- can have its own.
 key :: String
-key =
-  "-----BEGIN EC PRIVATE KEY-----\
-  \MHcCAQEEIAQfTmIbj/skzqawp36VZ+mxDfOrhYAee/fle3j2yPSzoAoGCCqGSM49\
-  \AwEHoUQDQgAEUXD06CCVGvJF4f321v4H7i8n42HIc7TwoCushS8OIRHDkknePCpX\
-  \mFJwWGgySziWJeAeVjyaCLOGxhRWT2R3Bw==\
-  \-----END EC PRIVATE KEY-----"
+key = unlines
+  [ "-----BEGIN EC PRIVATE KEY-----"
+  , "MHcCAQEEIAQfTmIbj/skzqawp36VZ+mxDfOrhYAee/fle3j2yPSzoAoGCCqGSM49"
+  , "AwEHoUQDQgAEUXD06CCVGvJF4f321v4H7i8n42HIc7TwoCushS8OIRHDkknePCpX"
+  , "mFJwWGgySziWJeAeVjyaCLOGxhRWT2R3Bw=="
+  , "-----END EC PRIVATE KEY-----"
+  ]
 
 projectMapping :: M.Map String [String -> IO ()]
 projectMapping = M.fromList
